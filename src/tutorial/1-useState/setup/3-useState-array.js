@@ -15,6 +15,9 @@ const UseStateArray = () => {
 	  				);
 	  			})
 	  		}
+	  		<button className='btn' onClick={()=>setPeople([])}>
+	  			Clear items
+	  		</button>
 	  	</React.Fragment>
   	);
 };
