@@ -3,6 +3,10 @@ import { data } from '../../../data';
 
 const UseStateArray = () => {
 	const [people,setPeople] = React.useState(data)
+	const removeItem = (id) => {
+		let newPeopel = people.filter((person)=> person.id !== id)
+		setPeople(newPeopel)
+	}
   return (
 	  	<React.Fragment>
 	  		{
@@ -11,6 +15,9 @@ const UseStateArray = () => {
 	  				return (
 	  					<div key={id} className='item'>
 	  						<h4>{name}</h4>
+							<button onClick={()=>removeItem(id)}>
+								X
+							</button>	  						
 	  					</div>
 	  				);
 	  			})
