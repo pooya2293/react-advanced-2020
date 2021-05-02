@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 // second parameter
 const UseEffectBasics = () => {
 	const [value,setValue] = useState(0);
-	useEffect(()=>{
+	if (value > 1){
+		useEffect(()=>{
 		console.log('cal i')
-		document.title = `New message(${value})`
-	})
+		document.title = `New (${value})`
+		})
+	}
 	console.log('render me')
 	return (
 		<>		
