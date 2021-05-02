@@ -10,10 +10,10 @@ const UseEffectCleanup = () => {
 	}
 	useEffect(()=>{
 		window.addEventListener('resize',checkSize)
-		return ()=>{
-			window.removeEventListener('resize',checkSize)
-		}
-	})
+		// return ()=>{
+		// 	window.removeEventListener('resize',checkSize)
+		// }
+	},[])
   return (
   	<>
   		<h3>window size</h3>
