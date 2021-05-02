@@ -9,7 +9,7 @@ const UseEffectBasics = () => {
 		if(value>0){
 			document.title = `New (${value})`
 		}
-	},[])
+	},[value])
 	
 	console.log('render me')
 	return (
