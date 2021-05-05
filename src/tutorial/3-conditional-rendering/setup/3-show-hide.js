@@ -21,6 +21,9 @@ const Component1 = () => {
 	}
 	useEffect(()=>{
 		window.addEventListener('resize',checkSize);
+		return()=>{
+			window.removeEventListener('resize',checkSize)
+		};
 	},[])
 	return (
 		<div style={{marginTop:"35px"
