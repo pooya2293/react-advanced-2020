@@ -21,13 +21,12 @@ const Component1 = () => {
 	}
 	useEffect(()=>{
 		window.addEventListener('resize',checkSize);
-		return()=>{
-			window.removeEventListener('resize',checkSize)
-		};
+		// return()=>{
+		// 	window.removeEventListener('resize',checkSize)
+		// };
 	},[])
 	return (
-		<div style={{marginTop:"35px"
-		}}>
+		<div style={{marginTop:"35px"}}>
 			<h2>hello I am component</h2>
 			<h4>size:{size}</h4>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Ex, voluptatem fugit a id facilis qui saepe facere.</p>
