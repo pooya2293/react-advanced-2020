@@ -16,8 +16,8 @@ const ControlledInputs = () => {
 		// if inputs were complected
 		if(firstName && email) {
 			const person = {firstName,email}
-			setPeople(()=>{
-				return [person]
+			setPeople((oldPeople)=>{
+				return [...oldPeople,person]
 			})
 			setFirstName('');
 			setEmail('');
