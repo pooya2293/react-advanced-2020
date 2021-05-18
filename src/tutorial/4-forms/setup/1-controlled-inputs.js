@@ -8,9 +8,18 @@ import React, { useState } from 'react';
 const ControlledInputs = () => {
 	const [firstName,setFirstName] = useState('')
 	const [email,setEmail] = useState('')
+	// people array for adding from form to it 
+	const [people,setPeople] = useState([])
+
 	const handleSubmit = (e)=>{
 		e.preventDefault();
-		console.log(firstName,email)
+		// if inputs were complected
+		if(firstName && email) {
+			const person = {f:firstName,E:email}
+			console.log(person)//{f: "poorya", E: "Poorya2293@gmail.com"}
+		}else{
+			console.log('empty')
+		}
 	}
   return (
   	<>
