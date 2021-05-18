@@ -39,6 +39,16 @@ const ControlledInputs = () => {
   				</div>
   				<button type="submit">add</button>		
   			</form>
+  		{/*link value input to DOM*/}
+  		{people.map((person,index)=>{
+  			const {id,firstName,email} = person;
+  			return(
+  				<div key={index} className='item'>
+  					<h4>{firstName}</h4>
+  					<p>{email}</p>
+  				</div>
+  			)
+  		})}
   		</article>
   	</>
   )
