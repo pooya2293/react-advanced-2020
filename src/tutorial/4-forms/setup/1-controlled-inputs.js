@@ -15,8 +15,8 @@ const ControlledInputs = () => {
 		e.preventDefault();
 		// if inputs were complected
 		if(firstName && email) {
-			const person = {f:firstName,E:email}
-			console.log(person)//{f: "poorya", E: "Poorya2293@gmail.com"}
+			const person = {firstName,email}
+			console.log(person)//{firstName: "poorya", email: "Poorya2293@gmail.com"}
 		}else{
 			console.log('empty')
 		}
