@@ -19,7 +19,7 @@ const ControlledInputs = () => {
 			setPeople((oldPeople)=>{
 				return [...oldPeople,person]
 			})
-			console.log(person);//{id: "1621342772798", firstName: "poorya", email: "09187082293"}
+	
 			setFirstName('');
 			setEmail('');
 		}else{
