@@ -14,7 +14,7 @@ const ControlledInputs = () => {
   const handleChange = (e)=>{
     const name = e.target.name;
     const value = e.target.value;
-    console.log(name,value);//if i click one key like d in Name inpute console show : firstName d
+    setPerson({...person,[name]:value})
   }
 
   const handleSubmit = (e)=>{
