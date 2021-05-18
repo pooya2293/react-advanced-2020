@@ -16,7 +16,11 @@ const ControlledInputs = () => {
 		// if inputs were complected
 		if(firstName && email) {
 			const person = {firstName,email}
-			console.log(person)//{firstName: "poorya", email: "Poorya2293@gmail.com"}
+			setPeople(()=>{
+				return [person]
+			})
+			setFirstName('');
+			setEmail('');
 		}else{
 			console.log('empty')
 		}
