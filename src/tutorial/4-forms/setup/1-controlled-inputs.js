@@ -10,7 +10,7 @@ const ControlledInputs = () => {
 	const [email,setEmail] = useState('')
 	const handleSubmit = (e)=>{
 		e.preventDefault();
-		console.log('helloWorld')
+		console.log(firstName,email)
 	}
   return (
   	<>
