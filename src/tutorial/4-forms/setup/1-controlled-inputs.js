@@ -15,10 +15,11 @@ const ControlledInputs = () => {
 		e.preventDefault();
 		// if inputs were complected
 		if(firstName && email) {
-			const person = {firstName,email}
+			const person = {id: new Date().getTime().toString() ,firstName,email}
 			setPeople((oldPeople)=>{
 				return [...oldPeople,person]
 			})
+			console.log(person);//{id: "1621342772798", firstName: "poorya", email: "09187082293"}
 			setFirstName('');
 			setEmail('');
 		}else{
@@ -43,7 +44,7 @@ const ControlledInputs = () => {
   		{people.map((person,index)=>{
   			const {id,firstName,email} = person;
   			return(
-  				<div key={index} className='item'>
+  				<div key={id} className='item'>
   					<h4>{firstName}</h4>
   					<p>{email}</p>
   				</div>
