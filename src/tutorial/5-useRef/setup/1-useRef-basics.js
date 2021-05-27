@@ -13,6 +13,10 @@ const UseRefBasics = () => {
 		console.log(divContainer.current)//show <div>hello world</div>
 	}
 
+	useEffect(()=>{
+		console.log(refContainer.current) //<input type="text">
+		refContainer.current.focus();//when each render Add focus to curent ant it  does not need dependenciy useEffecte re-render
+	})
   return (
   	<>
   		<form action="" className="form" onSubmit={handleSubmit} >
@@ -20,8 +24,8 @@ const UseRefBasics = () => {
   				<input type="text" ref={refContainer} />
   				<button type='submit'>submit</button>
   			</div>
-  			<div ref={divContainer}>hello world</div>
   		</form>
+  		<div ref={divContainer}>hello world</div>
   	</>
   )
 };
