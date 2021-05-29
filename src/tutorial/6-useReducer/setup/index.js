@@ -11,7 +11,7 @@ const Index = () => {
 	const handleSubmit = (e)=>{
 		e.preventDefault()
 		if(name){
-			setShowModal(true)
+			// setShowModal(true)
 			setPeople([...people,{id:new Date().getTime().toString(), name }])
 			setName('')
 		}else{
