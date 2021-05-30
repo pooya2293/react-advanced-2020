@@ -28,7 +28,7 @@ const reducer = (state,action)=>{
   if(action.type === 'REMOVE_ITEM'){
     const newPeoples = state.people.filter((person)=>person.id !== action.payLoad);
     return {
-      ...state,
+      ...state,//icant understant
       people:newPeoples,
       isModalOpen:true,
       modalContent:'item removed',
