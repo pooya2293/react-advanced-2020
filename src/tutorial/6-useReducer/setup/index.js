@@ -3,8 +3,16 @@ import Modal from './Modal';
 import { data } from '../../../data';
 // reducer function
 const reducer = (state,action)=>{
-  console.log(state,action) //{people: Array(0), isModalOpen: false, modalContent: ""} //{type: "TESTING"}
-  return state; //if not use it get this error: TypeError: Cannot read property 'isModalOpen' of undefined 
+  if(action.type === 'ADD_ITEM'){
+    const newPeople = [...state.people , action.payLoad]
+    return {
+      ...state,
+      people:newPeople,
+      isModalOpen:true,
+      modalContent:'item added',
+    }
+  } 
+  throw new Error('no matching action type') //instead of return state
 };
 const defaultState = {
 	people: [],
@@ -18,9 +26,10 @@ const Index = () => {
 	const handleSubmit = (e)=>{
 		e.preventDefault()
 		if(name){
-      dispatch({ type:'TESTING' })
+      const newItem = {id: new Date().getTime().toString() , name}
+      dispatch({ type:'ADD_ITEM',payLoad:newItem })
 		}else{
-
+      dispatch({ type:'RANDOM' })
 		}
 	}
   return (
