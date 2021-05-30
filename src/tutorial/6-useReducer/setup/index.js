@@ -2,40 +2,7 @@ import React, { useState, useReducer } from 'react';
 import Modal from './Modal';
 import { data } from '../../../data';
 // reducer function
-const reducer = (state,action)=>{
-  if(action.type === 'ADD_ITEM'){
-    const newPeople = [...state.people , action.payLoad]
-    return {
-      ...state,
-      people:newPeople,
-      isModalOpen:true,
-      modalContent:'item added',
-    }
-  } 
-  if(action.type === 'NO_VALUE'){
-    return {
-      ...state,
-      isModalOpen:true,
-      modalContent:'pleas enter value'
-    }
-  }
-  if(action.type === 'CLOSE_MODAL' ){
-    return {
-      ...state,
-      isModalOpen:false
-    }
-  }
-  if(action.type === 'REMOVE_ITEM'){
-    const newPeoples = state.people.filter((person)=>person.id !== action.payLoad);//icant understant whay i cant add croshe({}) in filter here after arrow function show this Error : Expected an assignment or function call and instead saw an expression  no-unused-expressions
-    return {
-      ...state,
-      people:newPeoples,
-      isModalOpen:true,
-      modalContent:'item removed',
-    }
-  }
-  throw new Error('no matching action type') 
-};
+import {reducer} from './reducer'
 const defaultState = {
 	people: [],
 	isModalOpen: false,
