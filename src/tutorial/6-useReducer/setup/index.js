@@ -12,6 +12,13 @@ const reducer = (state,action)=>{
       modalContent:'item added',
     }
   } 
+  if(action.type === 'NO_VALUE'){
+    return {
+      ...state,
+      isModalOpen:true,
+      modalContent:'pleas enter value'
+    }
+  }
   throw new Error('no matching action type') //instead of return state
 };
 const defaultState = {
@@ -28,8 +35,9 @@ const Index = () => {
 		if(name){
       const newItem = {id: new Date().getTime().toString() , name}
       dispatch({ type:'ADD_ITEM',payLoad:newItem })
+      setName('')
 		}else{
-      dispatch({ type:'RANDOM' })
+      dispatch({ type:'NO_VALUE' })
 		}
 	}
   return (
