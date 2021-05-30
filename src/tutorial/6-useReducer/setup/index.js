@@ -25,7 +25,16 @@ const reducer = (state,action)=>{
       isModalOpen:false
     }
   }
-  throw new Error('no matching action type') //instead of return state
+  if(action.type === 'REMOVE_ITEM'){
+    const newPeoples = state.people.filter((person)=>person.id !== action.payLoad);
+    return {
+      ...state,
+      people:newPeoples,
+      isModalOpen:true,
+      modalContent:'item removed',
+    }
+  }
+  throw new Error('no matching action type') 
 };
 const defaultState = {
 	people: [],
@@ -63,8 +72,10 @@ const Index = () => {
   		</form>
   		{state.people.map((person)=>{
   			return (
-  				<div key={person.id}>
+  				<div key={person.id} className='item'>
   					<h4>{person.name}</h4>
+            <button onClick={()=>dispatch(
+            {type:'REMOVE_ITEM',payLoad:person.id})}>x</button>
   				</div>
   			)
   		})}
