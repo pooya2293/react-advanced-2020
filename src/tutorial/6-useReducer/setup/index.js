@@ -19,6 +19,12 @@ const reducer = (state,action)=>{
       modalContent:'pleas enter value'
     }
   }
+  if(action.type === 'CLOSE_MODAL' ){
+    return {
+      ...state,
+      isModalOpen:false
+    }
+  }
   throw new Error('no matching action type') //instead of return state
 };
 const defaultState = {
@@ -39,10 +45,13 @@ const Index = () => {
 		}else{
       dispatch({ type:'NO_VALUE' })
 		}
-	}
+	};
+  const closeModal = ()=>{
+    dispatch({ type:'CLOSE_MODAL' })
+  }
   return (
   	<>
-  		{state.isModalOpen && <Modal modalContent={state.modalContent} />}
+  		{state.isModalOpen && <Modal closeModal={closeModal} modalContent={state.modalContent} />}
   		<form onSubmit={handleSubmit} className='form'>
   			<div>
   				<input 
