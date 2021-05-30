@@ -2,7 +2,10 @@ import React, { useState, useReducer } from 'react';
 import Modal from './Modal';
 import { data } from '../../../data';
 // reducer function
-const reducer = (state,action)=>{};
+const reducer = (state,action)=>{
+  console.log(state,action) //{people: Array(0), isModalOpen: false, modalContent: ""} //{type: "TESTING"}
+  return state; //if not use it get this error: TypeError: Cannot read property 'isModalOpen' of undefined 
+};
 const defaultState = {
 	people: [],
 	isModalOpen: false,
@@ -15,7 +18,7 @@ const Index = () => {
 	const handleSubmit = (e)=>{
 		e.preventDefault()
 		if(name){
-
+      dispatch({ type:'TESTING' })
 		}else{
 
 		}
