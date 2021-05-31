@@ -13,17 +13,19 @@ const ContextAPI = () => {
     });
   };
   return (
-    <PersonContext.Provider value={{removePerson}}>
+    <PersonContext.Provider value={{removePerson,people}}>
       <h3>prop drilling</h3>
-      <List people={people} />
+      <List />
     </PersonContext.Provider>
   );
 };
 
-const List = ({ people }) => {
+const List = () => {
+  const mainData = useContext(PersonContext)
+  console.log(mainData)//Object={ //people: (4) [{…}, {…}, {…}, {…}]//removePerson: id => {…} }
   return (
     <>
-      {people.map((person) => {
+      {mainData.people.map((person) => {
         return (
           <SinglePerson
             key={person.id}
