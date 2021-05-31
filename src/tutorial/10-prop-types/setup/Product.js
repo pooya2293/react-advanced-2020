@@ -1,11 +1,13 @@
 import React from 'react';
 
 const Product = ({ name,image,price }) => {
+	console.log(name,image,price) //sofa set undefined undefined //means object that have name sofa set didnt have image and price
   return (
   	<article className='product'>
-  		<img src={image.url} alt={name} /> {/* getting big fat error becues in url api one an item do'nt have image url and url is undefind too  */}
+  		<h4>single item</h4>
+  		{/*<img src={image.url} alt={name} /> 
     	<h4>{name}</h4>
-    	<p>${price}</p>
+    	<p>${price}</p>*/}
     </article>
     )
 };
