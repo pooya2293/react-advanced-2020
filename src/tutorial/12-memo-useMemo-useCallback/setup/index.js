@@ -5,7 +5,7 @@ import { useFetch } from '../../9-custom-hooks/final/2-useFetch'
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/javascript-store-products'
 
-// every time props or state changes, component re-renders
+/// every time props or state changes, component re-renders
 
 const Index = () => {
   const { products } = useFetch(url)
