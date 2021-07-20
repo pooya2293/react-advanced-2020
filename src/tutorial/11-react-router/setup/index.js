@@ -20,7 +20,7 @@ const ReactRouterSetup = () => {
   	<Route path='/people'>
   		<People />
   	</Route>
-  	<Route path='/error'>
+  	<Route path='*'>
   		<Error />
   	</Route>
   </Router>;
