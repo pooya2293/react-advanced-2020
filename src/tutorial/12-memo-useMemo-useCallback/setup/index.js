@@ -23,6 +23,9 @@ const Index = () => {
 }
 
 const BigList = ({ products }) => {
+  useEffect(() => {
+    console.log('big list')
+  });
   return (
     <section className='products'>
       {products.map((product) => {
@@ -33,6 +36,9 @@ const BigList = ({ products }) => {
 }
 
 const SingleProduct = ({ fields }) => {
+  useEffect(() => {
+    console.log('single list')//evry render by click 12th show this
+  });
   let { name, price } = fields
   price = price / 100
   const image = fields.image[0].url
