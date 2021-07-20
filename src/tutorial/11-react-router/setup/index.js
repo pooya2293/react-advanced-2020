@@ -22,6 +22,9 @@ const ReactRouterSetup = () => {
 		  	<Route path='/people'>
 		  		<People />
 		  	</Route>
+		  {/*#1*/}
+		  	<Route path='/person/:id' children={<Person />}>
+		  	</Route>
 		  	<Route path='*'>
 		  		<Error />
 		  	</Route>  
