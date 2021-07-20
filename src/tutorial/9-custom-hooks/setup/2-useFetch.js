@@ -1,18 +1,19 @@
-import { useState, useEffect } from 'react';
+// becuse in 12-useMemo curse i use this component for Fetch data the app warn the in useFecth in line 16 useEffect should write dependenci of getProducts
+import { useState, useEffect,useCallback } from 'react';
 
 export const useFetch = (url) => {
   const [loading, setLoading] = useState(true)
   const [products, setProducts] = useState([])
 
-  const getProducts = async () => {
+  const getProducts = useCallback(async () => {
     const response = await fetch(url)
     const products = await response.json()
     setProducts(products)
     setLoading(false)
-  }
+  },[url]);
 
   useEffect(() => {
     getProducts()
-  }, [url])
+  }, [url,getProducts])
   return {loading , products}
 };
