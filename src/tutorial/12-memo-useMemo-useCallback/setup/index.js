@@ -16,6 +16,17 @@ const Index = () => {
     setCart(cart + 1);
   },[cart]);
 
+  const calculateMostExpensive = (data)=>{
+    return data.reduce((total,item)=>{
+      console.log('hello most')
+      const price = item.fields.price;
+      if(price>=total) {
+        total = price;
+      }
+      return total
+    },0)/100;//this function return a value so lets imagine when its take a long time
+  }
+
   return (
     <>
       <h1>Count : {count}</h1>
@@ -25,6 +36,7 @@ const Index = () => {
       <h1 style={{marginTop:'3rem'}}>
         cart:{cart}
       </h1>
+      <h1>Most Expensive: %{calculateMostExpensive(products)}</h1>
       <BigList products={products} addToCart={addToCart} />
     </>
   )
