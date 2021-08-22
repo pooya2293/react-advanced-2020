@@ -1,4 +1,5 @@
 import React from 'react';
+// its intresting prop types dont need to install any package
 import PropTypes from 'prop-types'
 import defaultImage from '../../../assets/default-image.jpeg'
 
